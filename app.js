@@ -16,8 +16,8 @@ const passport=require('passport');
 const LocalStratergy=require('passport-local');
 const mongoSanitize=require('express-mongo-sanitize');
 const User=require('./models/user.js');
-//const dbUrl=process.env.DB_URL;
-const dbUrl='mongodb://127.0.0.1:27017/yelp-camp';
+const dbUrl=process.env.DB_URL;
+//const dbUrl='mongodb://127.0.0.1:27017/yelp-camp';
 const methodOverride=require("method-override");
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
@@ -39,10 +39,7 @@ mongoose.connect(dbUrl,{
 app.engine('ejs',ejsMate);
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
-// app.get("/makecampground",async(req,res)=>{
-//     const camp=new Campground({title:'My back yard',description:'cheap camping'});
-//     res.send(camp);
-// })
+
 app.listen(3000,()=>{
     console.log("Serving on port 3000");
 })
