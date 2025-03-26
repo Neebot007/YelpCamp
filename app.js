@@ -17,7 +17,6 @@ const LocalStratergy=require('passport-local');
 const mongoSanitize=require('express-mongo-sanitize');
 const User=require('./models/user.js');
 const dbUrl=process.env.DB_URL;
-//const dbUrl='mongodb://127.0.0.1:27017/yelp-camp';
 const methodOverride=require("method-override");
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
